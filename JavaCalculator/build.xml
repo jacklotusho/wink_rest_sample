@@ -1,0 +1,100 @@
+<project name="JavaCalculator"  default="jar_JavaCalculator" basedir=".">
+
+<description>JavaCalculator</description>
+
+<!-- ============== set global properties for this build ============== -->
+
+<property name="src" location="./src"/>
+<property name="unittests" location="./tests"/>
+<property name="build" location="./bin"/>
+<property name="dist"  location="./"/>
+<property name="lib" value="./libs" />
+<property name="jarFile_JavaCalculator" value="JavaCalculator.jar"/>
+	
+<path id="build.classpath">
+  <fileset dir="lib">
+	    <include name="**/*.jar" />
+  </fileset>
+</path>
+	
+<!-- ============== init ======================== -->
+
+<target name="init">
+	<echo>================= init =================</echo>
+	
+   <!-- Create the time stamp -->
+   <tstamp>
+       <format property="TODAY" pattern="d-MMMM-yyyy  HH:mm:ss" locale="nl"/>
+   </tstamp>
+    
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+</target>
+
+  
+<!-- ================= compile ====================== -->
+
+<target name="compile" depends="init" description="compile the source " >
+
+    <echo>================= compile =================</echo>	
+
+    <javac srcdir="${src}" destdir="${build}">
+        <classpath>
+            <fileset dir="${lib}">
+                <include name="*.jar">
+                </include>
+            </fileset>			
+        </classpath>
+    </javac>
+
+</target>
+  
+<!-- ================= run ====================== -->
+	
+<target name="run_JavaCalculator" depends="compile">
+	    <echo>================= run_JavaCalculator =================</echo>
+	    <java classname="com.lihong.javacalculator.app.CalculatorApp" fork="true">
+	        <classpath>
+	             <fileset dir="${lib}">
+	                 <include name="*.jar"></include>
+	             </fileset>
+	             <pathelement path="${build}"/> 
+	        </classpath> 
+	    </java>
+</target>
+	
+	
+<!-- ================= jar ====================== -->	
+	    
+<target name="jar_JavaCalculator" depends="compile">
+    <echo>================= Build jar_JavaCalculator =================</echo>
+    <delete file="${dist}/${jarFile_JavaCalculator}" verbose="true"/>
+    <!-- Set time stamp -->
+    <tstamp>
+        <format property="TODAY" pattern="d-MMMM-yyyy  HH:mm:ss" locale="nl"/>
+    </tstamp>
+            
+    <jar jarfile="${dist}/${jarFile_JavaCalculator}" basedir="${build}" includes="*/**" >
+          <manifest>
+            <attribute name="Main-Class" value="com.lihong.javacalculator.app.CalculatorApp"/>
+            <attribute name="Created-By" value="Lihong Yu"/>
+            <attribute name="Manifest-Version" value="1.0"/>
+            <attribute name="Class-Path" value="${lib}/commons-lang-2.3.jar 
+                                                ${lib}/jackson-core-2.2.1.jar
+                                                ${lib}/jackson-core-asl-1.7.0.jar 
+                                                ${lib}/jackson-jaxrs-1.7.0.jar 
+                                                ${lib}/jackson-mapper-asl-1.7.0.jar 
+                                                ${lib}/jackson-xc-1.7.0.jar 
+                                                ${lib}/jsr311-api-1.1.1.jar 
+                                                ${lib}/slf4j-api-1.6.1.jar
+                                                ${lib}/slf4j-simple-1.6.1.jar 
+                                                ${lib}/wink-1.3.0.jar 
+                                                ${lib}/wink-client-1.3.0.jar"/>
+          </manifest>
+    </jar>
+</target>
+	
+<!-- ================= end ====================== -->
+
+</project>
+
