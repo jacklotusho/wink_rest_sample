@@ -1,11 +1,10 @@
 package com.lihong.javacalculator.api;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import om.lihong.javacalculator.api.impl.RestCalculatorClient;
 
 import org.junit.Test;
 
-import com.lihong.javacalculator.api.IJavaCalculator;
-import com.lihong.javacalculator.api.RestCalculatorClient;
 
 public class RestCalculatorClientTest {
 
