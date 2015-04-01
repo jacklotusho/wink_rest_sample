@@ -2,7 +2,6 @@ package com.lihong.webrestcalculator.services;
 
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
@@ -14,21 +13,10 @@ import org.codehaus.jackson.xc.JaxbAnnotationIntrospector;
 
 public class WebRestCalculatorApplication extends Application
 {
-	private Set<Object> s = Collections.emptySet();
+	private java.util.Set<Object> s = Collections.emptySet();
 
 	@Override
-	public Set<Class<?>> getClasses() {
-		Set<Class<?>> classes = new HashSet<Class<?>>();
-		classes.add(WebRestCalculatorPlusResource.class);
-		classes.add(WebRestCalculatorMinusResource.class);
-		classes.add(WebRestCalculatorMultiplyResource.class);
-		classes.add(WebRestCalculatorDivideResource.class);
-		
-		return classes;
-	}
-
-	@Override
-	public Set<Object> getSingletons() {
+	public java.util.Set<Object> getSingletons() {
 		this.s = new HashSet<Object>();
 		
 		ObjectMapper mapper = new ObjectMapper();
@@ -46,8 +34,19 @@ public class WebRestCalculatorApplication extends Application
 		return s;
 	}
 
-	public void setSingletons(final Set<Object> singletons) {
+	public void setSingletons(final java.util.Set<Object> singletons) {
 		this.s = singletons;
+	}
+
+	@Override
+	public java.util.Set<Class<?>> getClasses() {
+		java.util.Set<Class<?>> classes = new HashSet<Class<?>>();
+		classes.add(WebRestCalculatorPlusResource.class);
+		classes.add(WebRestCalculatorMinusResource.class);
+		classes.add(WebRestCalculatorMultiplyResource.class);
+		classes.add(WebRestCalculatorDivideResource.class);
+		
+		return classes;
 	}
 
 }

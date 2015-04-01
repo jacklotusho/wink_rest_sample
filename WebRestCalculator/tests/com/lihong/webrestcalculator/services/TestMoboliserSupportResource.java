@@ -1,5 +1,12 @@
 package com.lihong.webrestcalculator.services;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import javax.ws.rs.core.MediaType;
 
 import junit.framework.TestCase;
@@ -9,14 +16,6 @@ import org.apache.wink.client.Resource;
 import org.apache.wink.client.RestClient;
 import org.apache.wink.json4j.JSONException;
 import org.apache.wink.json4j.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.junit.Test;
 
 public class TestMoboliserSupportResource extends TestCase {

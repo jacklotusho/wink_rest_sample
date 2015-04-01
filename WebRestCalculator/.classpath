@@ -10,6 +10,24 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-lang-2.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-core-asl-1.7.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-jaxrs-1.7.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-mapper-asl-1.7.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-xc-1.7.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxb-api-2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxb-impl-2.1.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jettison-1.0.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/json-20090211.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsr311-api-1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.5.11.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-jdk14-1.5.11.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/stax-api-1.0-2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wink-1.3.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wink-client-1.3.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wink-common-1.3.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wink-jettison-provider-1.1.2-incubating.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wink-server-1.3.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

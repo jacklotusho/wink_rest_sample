@@ -6,12 +6,10 @@ import java.util.Set;
 import org.apache.wink.client.ClientConfig;
 import org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider;
 
-import com.lihong.webrestcalculator.services.WebRestCalculatorApplication;
-
 public class TestUtil {
 	public static ClientConfig createClientConfig() {
 		WebRestCalculatorApplication clientApplication = new WebRestCalculatorApplication();
-    	Set<Object> s = new HashSet<Object>();
+		Set<Object> s = new HashSet<Object>();
     	s.add(new JacksonJaxbJsonProvider());
     	clientApplication.setSingletons(s);
     	ClientConfig clientConfig = new ClientConfig().applications(clientApplication);
