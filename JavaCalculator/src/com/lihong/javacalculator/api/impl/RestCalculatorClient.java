@@ -1,4 +1,4 @@
-package om.lihong.javacalculator.api.impl;
+package com.lihong.javacalculator.api.impl;
 
 import com.lihong.javacalculator.api.IJavaCalculator;
 import com.lihong.javacalculator.services.ICalculatorService;
